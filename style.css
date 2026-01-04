@@ -1,0 +1,1214 @@
+:root {
+  --bg-black: #000000;
+  --bg-zinc-950: #09090b;
+  --bg-zinc-900: #18181b;
+  --primary-red: #dc2626;
+  --text-zinc-400: #a1a1aa;
+  --border-zinc-800: #27272a;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Light theme overrides (red on white) */
+[data-theme="light"] {
+  --bg-black: #ffffff;
+  --bg-zinc-950: #ffffff;
+  --bg-zinc-900: #ffffff;
+  --primary-red: #dc2626;
+  --text-zinc-400: #6b7280;
+  /* slate gray */
+  --border-zinc-800: #e5e7eb;
+  --text-color: #111827;
+  /* very dark */
+}
+
+/* Navigation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-zinc-800);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-link {
+  color: var(--text-zinc-400) !important;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  color: var(--text-color) !important;
+}
+
+.logo-box {
+  background-color: var(--primary-red);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-right: 10px;
+  color: white;
+}
+
+/* Buttons */
+.btn-red {
+  background-color: var(--primary-red);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.btn-red:hover {
+  background-color: #b91c1c;
+  color: white;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.12);
+}
+
+.btn-outline-zinc {
+  border: 1px solid var(--border-zinc-800);
+  color: var(--text-color);
+  font-weight: 700;
+  padding: 12px 30px;
+  background: transparent;
+}
+
+/* Login Button Style */
+.btn-login {
+  background: transparent;
+  color: var(--primary-red);
+  border: 1.5px solid var(--primary-red);
+  font-weight: 700;
+  padding: 8px 22px;
+  border-radius: 8px;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+  font-size: 1rem;
+  box-shadow: none;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  background: var(--primary-red);
+  color: #fff;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.10);
+  text-decoration: none;
+  outline: none;
+}
+
+/* Light theme: keep border and text visible */
+[data-theme="light"] .btn-login {
+  background: transparent;
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+[data-theme="light"] .btn-login:hover,
+[data-theme="light"] .btn-login:focus {
+  background: var(--primary-red);
+  color: #fff;
+  border-color: var(--primary-red);
+}
+
+/* Theme toggle button */
+.btn-theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-zinc-800);
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+  border-radius: 8px;
+  color: var(--text-color);
+  display: inline-flex;
+  gap: 0;
+}
+
+.btn-theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* show moon in dark, sun in light */
+.icon-sun {
+  display: none;
+}
+
+.icon-moon {
+  display: inline-block;
+}
+
+[data-theme="light"] .icon-sun {
+  display: inline-block;
+}
+
+[data-theme="light"] .icon-moon {
+  display: none;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+  filter: blur(60px);
+}
+
+[data-theme="light"] .hero-glow {
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.badge-zinc {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  color: var(--text-zinc-400);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="light"] .badge-zinc {
+  background: transparent;
+  color: var(--text-zinc-400);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.text-red {
+  color: var(--primary-red);
+}
+
+/* Comparison Cards */
+.comp-card {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  padding: 40px;
+  border-radius: 16px;
+  height: 100%;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+[data-theme="light"] .comp-card {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(16, 24, 40, 0.04);
+}
+
+.comp-card.featured {
+  border: 2px solid rgba(220, 38, 38, 0.5);
+  position: relative;
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  background: var(--primary-red);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: white;
+}
+
+/* Step Cards */
+.step-card {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+[data-theme="light"] .step-card {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+}
+
+.step-card:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+.step-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #27272a;
+  margin-bottom: 1rem;
+}
+
+/* Pricing */
+.price-card {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+[data-theme="light"] .price-card {
+  background: #fff;
+}
+
+.price-card.best-value {
+  border: 2px solid var(--primary-red);
+}
+
+/* Utility */
+.section-padding {
+  padding: 100px 0;
+}
+
+.text-zinc {
+  color: var(--text-zinc-400);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* Footer Specific Styles */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-zinc-400);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary-red);
+  padding-left: 5px;
+}
+
+.newsletter-group .form-control:focus {
+  background-color: var(--bg-zinc-900);
+  border-color: var(--primary-red);
+  box-shadow: none;
+  color: white;
+}
+
+.hover-red:hover {
+  color: var(--primary-red) !important;
+  transition: 0.3s;
+}
+
+.size-5 {
+  width: 20px;
+  height: 20px;
+}
+
+/* -- Light-mode utility overrides to avoid hidden white text -- */
+[data-theme="light"] .text-white {
+  color: var(--text-color) !important;
+}
+
+/* Make utility text-zinc consistent in light mode */
+[data-theme="light"] .text-zinc {
+  color: var(--text-zinc-400) !important;
+}
+
+/* Navbar / brand / links */
+[data-theme="light"] .navbar-brand,
+[data-theme="light"] .navbar-brand .fw-bold,
+[data-theme="light"] .nav-link,
+[data-theme="light"] .text-white.small,
+[data-theme="light"] .hover-red {
+  color: var(--text-color) !important;
+}
+
+/* Theme toggle visuals in light mode */
+[data-theme="light"] .btn-theme-toggle {
+  color: var(--text-color);
+  border-color: var(--border-zinc-800);
+  background: transparent;
+}
+
+/* Ensure hero title is readable */
+[data-theme="light"] .hero-title,
+[data-theme="light"] .badge-zinc {
+  color: var(--text-color) !important;
+}
+
+/* Form controls that used bg-zinc-900 / text-white */
+[data-theme="light"] .form-control.bg-zinc-900,
+[data-theme="light"] .newsletter-group .form-control.bg-zinc-900 {
+  background-color: #fff !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-zinc-800) !important;
+}
+
+/* Badges that used bg-zinc-900 */
+[data-theme="light"] .badge.bg-zinc-900 {
+  background: #fff !important;
+  color: var(--text-zinc-400) !important;
+  border-color: var(--border-zinc-800) !important;
+}
+
+/* Price / card text */
+[data-theme="light"] .comp-card,
+[data-theme="light"] .step-card,
+[data-theme="light"] .price-card {
+  color: var(--text-color);
+}
+
+/* Ensure list item text switches color */
+[data-theme="light"] li {
+  color: var(--text-color) !important;
+}
+
+/* Lucide SVG icons inherit current color */
+[data-theme="light"] svg,
+[data-theme="light"] i[data-lucide] {
+  color: inherit;
+}
+
+/* Minor adjustments: buttons that used text-white */
+[data-theme="light"] .btn-red,
+[data-theme="light"] .btn-outline-zinc {
+  color: #fff;
+  /* keep red buttons with white text */
+}
+
+/* make outline button text visible on light bg */
+[data-theme="light"] .btn-outline-zinc {
+  color: var(--text-color) !important;
+  background: transparent !important;
+}
+
+/* Mobile-specific adjustments: show hamburger up to 425px, move actions into sidebar and keep padding equal */
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 425px) {
+
+  /* show hamburger button */
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border: none;
+  }
+
+  /* hide desktop navbar actions so they are only inside sidebar on small phones */
+  .navbar-actions {
+    display: none !important;
+  }
+
+  /* ensure collapse (center links) stays visible on phones; you may hide if preferred */
+  .collapse.navbar-collapse {
+    display: none !important;
+  }
+
+  /* Offcanvas sizing: full height, max width 425px, and equal left/right padding */
+  .offcanvas-mobile {
+    width: 100% !important;
+    max-width: 425px !important;
+    right: 0;
+    left: auto;
+  }
+
+  .offcanvas-mobile .offcanvas-body {
+    /* ensure equal horizontal padding */
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Offcanvas header same horizontal padding */
+  .offcanvas-mobile .offcanvas-header {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Fix for Bootstrap close button alignment on small devices */
+  .offcanvas-mobile .btn-close {
+    margin-left: 0;
+  }
+}
+
+/* Ensure lucide icons inside newly added controls inherit color */
+.offcanvas-mobile i[data-lucide],
+.offcanvas-mobile svg {
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* Ensure offcanvas content remains visible in light theme and keep equal horizontal padding */
+[data-theme="light"] .offcanvas-mobile {
+  background-color: #ffffff !important;
+  color: var(--text-color) !important;
+  border-left: 1px solid var(--border-zinc-800);
+}
+
+/* Make links, brand text and nav items readable in light mode */
+[data-theme="light"] .offcanvas-mobile .navbar-brand,
+[data-theme="light"] .offcanvas-mobile .navbar-brand .fw-bold,
+[data-theme="light"] .offcanvas-mobile .nav-link,
+[data-theme="light"] .offcanvas-mobile a.text-white,
+[data-theme="light"] .offcanvas-mobile .text-white {
+  color: var(--text-color) !important;
+}
+
+/* Offcanvas header/body equal horizontal padding on phones */
+.offcanvas-mobile,
+.offcanvas-mobile .offcanvas-header,
+.offcanvas-mobile .offcanvas-body {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+/* Make mobile buttons readable in light theme */
+[data-theme="light"] .offcanvas-mobile .btn-outline-light {
+  border-color: var(--border-zinc-800) !important;
+  color: var(--text-color) !important;
+  background: transparent !important;
+}
+
+/* Ensure Lucide icons inherit the offcanvas color in light mode */
+[data-theme="light"] .offcanvas-mobile svg,
+[data-theme="light"] .offcanvas-mobile i[data-lucide] {
+  color: inherit !important;
+}
+
+/* Close button visibility */
+[data-theme="light"] .offcanvas-mobile .btn-close.btn-close-white {
+  filter: none;
+  opacity: 0.75;
+}
+
+/* ===============================
+   EXTRA SUPPORT SECTION
+================================ */
+
+.bg-extra-support {
+  background: radial-gradient(circle at top,
+      rgba(220, 38, 38, 0.08),
+      rgba(0, 0, 0, 0.95));
+}
+
+.support-card {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 18px;
+  padding: 36px 30px;
+  height: 100%;
+  transition: all 0.35s ease;
+}
+
+[data-theme="light"] .support-card {
+  background: #ffffff;
+  border: 1px solid var(--border-zinc-800);
+  color: var(--text-color);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+}
+
+.support-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+.support-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(220, 38, 38, 0.15);
+  color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.support-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Mobile spacing */
+@media (max-width: 576px) {
+  .support-card {
+    padding: 28px 22px;
+  }
+}
+
+/* === HARD FIX: Mobile offcanvas overflow issue === */
+@media (max-width: 425px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  .offcanvas-backdrop {
+    width: 100vw;
+  }
+
+  .offcanvas.offcanvas-end {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    right: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
+    transform: translateX(100%);
+    border-radius: 0;
+  }
+
+  .offcanvas.offcanvas-end.show {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .mobile-toggle {
+    margin-left: auto;
+    padding: 6px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/* === Smooth & synced offcanvas animation fix === */
+@media (max-width: 425px) {
+
+  .offcanvas.offcanvas-end {
+    width: calc(100vw - 12px) !important;
+    /* Leaves a small gap on the right for visibility */
+    max-width: calc(100vw - 12px) !important;
+    right: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
+    border-radius: 0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+
+    /* Smooth slide animation */
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(.4, 0, 1, 1) !important;
+    will-change: transform;
+  }
+
+  .offcanvas.offcanvas-end.show {
+    transform: translateX(0);
+  }
+
+  .offcanvas.offcanvas-end.hiding {
+    transform: translateX(100%);
+  }
+
+  .offcanvas.offcanvas-end .offcanvas-header,
+  .offcanvas.offcanvas-end .offcanvas-body {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* === Remove offcanvas open delay caused by backdrop === */
+@media (max-width: 425px) {
+
+  .offcanvas-backdrop {
+    transition: opacity 0.1s linear !important;
+  }
+
+  .offcanvas-backdrop.fade {
+    opacity: 0;
+  }
+
+  .offcanvas-backdrop.show {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .offcanvas.offcanvas-end {
+    /* Keep width and padding rules from your previous code if needed */
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .offcanvas.offcanvas-end.show,
+  .offcanvas.offcanvas-end.showing {
+    transform: translateX(0);
+  }
+
+  .offcanvas.offcanvas-end.hiding {
+    transform: translateX(100%);
+  }
+}
+
+/* Section backgrounds: Light mode overrides */
+
+/* Hero Section */
+[data-theme="light"] .hero-section {
+  background: #fff;
+}
+
+/* Extra Support Section */
+[data-theme="light"] .bg-extra-support {
+  background: radial-gradient(circle at top,
+      rgba(220, 38, 38, 0.06),
+      #fff 90%);
+}
+
+/* How It Works Section */
+[data-theme="light"] .how-it-works {
+  background: radial-gradient(circle at top,
+      rgba(220, 38, 38, 0.04),
+      #fff 90%);
+}
+
+/* Add similar overrides for any other section with a dark/gradient background */
+
+[data-theme="light"] .support-card {
+  background: #fff;
+  border: 1px solid var(--border-zinc-800);
+  color: var(--text-color);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+}
+
+[data-theme="light"] .support-card:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+[data-theme="light"] .support-icon {
+  background: rgba(220, 38, 38, 0.10);
+  color: var(--primary-red);
+}
+
+[data-theme="light"] .support-icon svg {
+  color: var(--primary-red);
+}
+
+/* ===============================
+   HERO CTA + STATS
+================================ */
+
+.hero-stats {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-card {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(0, 0, 0, 0.85));
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.35s ease;
+}
+
+[data-theme="light"] .stat-card {
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+  color: var(--text-color);
+}
+
+.stat-card i {
+  color: var(--primary-red);
+  width: 26px;
+  height: 26px;
+  margin-bottom: 12px;
+}
+
+[data-theme="light"] .stat-card i {
+  color: var(--primary-red);
+}
+
+.stat-card h3 {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+/* Unified card hover effect for all cards */
+.comp-card:hover,
+.step-card:hover,
+.price-card:hover,
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+  z-index: 2;
+}
+
+/* Light theme: keep the effect consistent */
+[data-theme="light"] .comp-card:hover,
+[data-theme="light"] .step-card:hover,
+[data-theme="light"] .price-card:hover,
+[data-theme="light"] .stat-card:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+/* Remove hover effect for "Why We Choose" section's cards (assuming .comp-card) */
+.comp-card:hover,
+[data-theme="light"] .comp-card:hover {
+  /* Reset transform, border, and shadow for comp-card on hover */
+  transform: none !important;
+  border-color: var(--border-zinc-800) !important;
+  box-shadow: none !important;
+  z-index: 1;
+}
+
+/* Smooth, extra-support-like hover effect for pricing cards */
+.price-card {
+  transition:
+    transform 0.35s cubic-bezier(.22, 1, .36, 1),
+    border-color 0.35s cubic-bezier(.22, 1, .36, 1),
+    box-shadow 0.35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.price-card:hover,
+[data-theme="light"] .price-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+  z-index: 2;
+}
+
+/* Mobile tuning */
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 80px;
+  }
+
+  .stat-card {
+    padding: 22px 18px;
+  }
+}
+
+/* ===============================
+   HOW IT WORKS – PREMIUM STEPS
+================================ */
+
+.how-it-works {
+  background: radial-gradient(circle at top,
+      rgba(220, 38, 38, 0.08),
+      rgba(0, 0, 0, 0.95));
+}
+
+/* Step Card */
+.step-card-new {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(0, 0, 0, 0.85));
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 20px;
+  padding: 40px 30px;
+  height: 100%;
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(.22, 1, .36, 1),
+    border-color 0.35s cubic-bezier(.22, 1, .36, 1),
+    box-shadow 0.35s cubic-bezier(.22, 1, .36, 1);
+}
+
+[data-theme="light"] .step-card-new {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+/* Smooth hover effect */
+.step-card-new:hover,
+[data-theme="light"] .step-card-new:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+/* Step Card Top Row: Serial + Icon */
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+/* Serial Number */
+.step-number {
+  position: static;
+  /* Remove absolute positioning */
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgba(220, 38, 38, 0.25);
+  /* visible soft red in both themes */
+  margin: 0;
+  transition: color 0.2s;
+}
+
+/* Icon container (already styled) */
+.step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(220, 38, 38, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* For light mode */
+[data-theme="light"] .step-icon {
+  background: rgba(220, 38, 38, 0.12);
+}
+
+/* Step icon: always red */
+.step-icon i,
+.step-icon svg {
+  color: var(--primary-red) !important;
+  width: 24px;
+  height: 24px;
+}
+
+/* Serial number: visible only in light mode, hidden in dark mode */
+.step-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgba(220, 38, 38, 0.25);
+  margin: 0;
+  transition: color 0.2s;
+}
+
+[data-theme="light"] .step-number {
+  color: rgba(220, 38, 38, 0.25);
+}
+
+/* ===============================
+   TESTIMONIALS – STUDENT LOVE
+================================ */
+
+/* Card */
+.testimonial-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(0,0,0,0.9)
+  );
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 20px;
+  padding: 36px 30px;
+  height: 100%;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+[data-theme="light"] .testimonial-card {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+/* Hover */
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+/* Quote */
+.quote-icon {
+  font-size: 3rem;
+  color: rgba(220, 38, 38, 0.25);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+/* Stars */
+.stars {
+  color: var(--primary-red);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+/* Text */
+.testimonial-text {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 22px;
+}
+
+/* User */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.15);
+  color: var(--primary-red);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .testimonial-card {
+    padding: 28px 22px;
+  }
+}
+
+/* ===============================
+   TESTIMONIALS – THEME AWARE BG
+================================ */
+
+/* Dark mode */
+.testimonials-section {
+  background-color: var(--bg-zinc-950);
+  position: relative;
+}
+
+/* Subtle red glow ONLY in dark mode */
+[data-theme="dark"] .testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(220, 38, 38, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Light mode */
+[data-theme="light"] .testimonials-section {
+  background-color: #ffffff;
+}
+
+
+/* ===============================
+   FAQ SECTION – THEME AWARE
+================================ */
+
+.faq-section {
+  background-color: var(--bg-zinc-950);
+}
+
+/* Light mode background */
+[data-theme="light"] .faq-section {
+  background-color: #ffffff;
+}
+
+/* Accordion wrapper */
+.faq-accordion {
+  max-width: 720px;
+}
+
+/* Accordion item */
+.faq-accordion .accordion-item {
+  background: transparent;
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+/* Header button */
+.faq-accordion .accordion-button {
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 18px 20px;
+  box-shadow: none;
+}
+
+/* Remove default Bootstrap arrow bg */
+.faq-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+/* Active state */
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--primary-red);
+  background: transparent;
+}
+
+/* Body */
+.faq-accordion .accordion-body {
+  color: var(--text-zinc-400);
+  padding: 18px 20px;
+  border-top: 1px solid var(--border-zinc-800);
+}
+
+/* Light mode fixes */
+[data-theme="light"] .faq-accordion .accordion-button::after {
+  filter: none;
+}
+
+[data-theme="light"] .faq-accordion .accordion-body {
+  color: var(--text-zinc-400);
+}
+
+/* Mobile spacing */
+@media (max-width: 576px) {
+  .faq-accordion .accordion-button {
+    padding: 16px;
+  }
+}
+
+/* ===============================
+   FINAL CTA – TALK TO EXPERT
+================================ */
+
+/* Base (dark mode default) */
+.final-cta-section {
+  background-color: var(--bg-zinc-950);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle red glow ONLY in dark mode */
+[data-theme="dark"] .final-cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(220, 38, 38, 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Light mode */
+[data-theme="light"] .final-cta-section {
+  background-color: #ffffff;
+}
+
+/* Text tuning */
+.final-cta-section h2 {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button spacing on mobile */
+@media (max-width: 576px) {
+  .final-cta-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+
+/* ===============================
+   SCROLL REVEAL ANIMATIONS
+================================ */
+
+/* Initial hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* Visible state */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight delay variants (optional) */
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+
+
+/* ===============================
+   OFFCANVAS – FINAL SINGLE SOURCE
+   (prevents conflicts)
+================================ */
+@media (max-width: 425px) {
+  .offcanvas.offcanvas-end {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    right: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
+    border-radius: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .offcanvas.offcanvas-end.show,
+  .offcanvas.offcanvas-end.showing {
+    transform: translateX(0);
+  }
+
+  .offcanvas.offcanvas-end.hiding {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Hub | Finish Your Academic Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center text-white" href="#">
+                <div class="logo-box">P</div>
+                <span class="fw-bold">Project Hub</span>
+            </a>
+
+            <!-- Mobile hamburger (visible only <=425px) -->
+            <button class="btn btn-link text-white mobile-toggle" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Open menu" title="Open menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 navbar-actions">
+                <button class="btn btn-login">Login</button>
+
+                <!-- Theme toggle (desktop) -->
+                <button id="theme-toggle" class="btn btn-theme-toggle d-flex align-items-center justify-content-center"
+                    aria-label="Toggle theme" title="Toggle theme">
+                    <i data-lucide="sun" class="icon-sun"></i>
+                    <i data-lucide="moon" class="icon-moon"></i>
+                </button>
+
+                <button class="btn btn-red btn-sm rounded-2">
+                    Get Your Project Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas sidebar for phones (slides in from right) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white offcanvas-mobile" tabindex="-1" id="mobileSidebar"
+        aria-labelledby="mobileSidebarLabel">
+        <div class="offcanvas-header">
+            <a class="navbar-brand d-flex align-items-center text-white" href="#">
+                <div class="logo-box">P</div>
+                <span class="fw-bold ms-2">Project Hub</span>
+            </a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav mb-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">FAQ</a>
+                </li>
+            </ul>
+
+            <div class="d-flex flex-column gap-3 mt-3">
+                <button class="btn btn-login w-100 mb-2">Login</button>
+
+                <!-- Theme toggle (mobile) -->
+                <button id="theme-toggle-mobile"
+                    class="btn btn-outline-light d-flex align-items-center justify-content-center">
+                    <i data-lucide="sun" class="me-2"></i> Toggle theme
+                </button>
+
+                <button class="btn btn-red w-100">Get Your Project Now</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="hero-section text-center">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="badge-zinc">Trusted by 5000+ CS/IT Students</div>
+            <h1 class="hero-title mb-4">
+                Finish Your Academic <br />
+                Project in <span class="text-red">Days — Not Months</span>
+            </h1>
+            <p class="text-zinc mx-auto mb-5" style="max-width: 600px; font-size: 1.1rem">
+                Premium ready-to-use projects for CS/IT students with full source
+                code, documentation, and expert support.
+            </p>
+            <!-- CTA Buttons -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+                <button class="btn btn-red px-4 py-3 rounded-3">
+                    Get Your Project Now
+                </button>
+                <button class="btn btn-outline-zinc px-4 py-3 rounded-3">
+                    See a Sample Project
+                </button>
+            </div>
+
+            <!-- Trust Points -->
+            <div class="d-flex justify-content-center gap-4 flex-wrap mt-3 small text-zinc">
+                <span>✔ Guide-approved format</span>
+                <span>✔ No plagiarism</span>
+                <span>✔ Instant access after payment</span>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mt-5 pt-4 justify-content-center hero-stats">
+                <div class="col-md-4 col-sm-6">
+                    <div class="stat-card">
+                        <i data-lucide="file-text"></i>
+                        <h3>5,000+</h3>
+                        <p class="text-zinc mb-0">Projects Available</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="stat-card">
+                        <i data-lucide="indian-rupee"></i>
+                        <h3>₹1,500</h3>
+                        <p class="text-zinc mb-0">Starting Price</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="stat-card">
+                        <i data-lucide="headphones"></i>
+                        <h3>24/7</h3>
+                        <p class="text-zinc mb-0">Student Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- University Trust -->
+            <p class="text-zinc small mt-4">
+                Used by students from JNTUH, OU, KU & other Indian universities
+            </p>
+        </div>
+    </header>
+
+    <section class="section-padding bg-zinc-950 reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <small class="text-red fw-bold text-uppercase tracking-widest">Why Choose Us</small>
+                <h2 class="fw-bold mt-3">
+                    Why struggle for months when your
+                    <span class="text-red">seniors finish in days?</span>
+                </h2>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 reveal delay-1">
+                    <div class="comp-card">
+                        <h5 class="mb-4 text-zinc">
+                            <i data-lucide="clock" class="me-2 size-5"></i> The Hard Way
+                            (Traditional)
+                        </h5>
+                        <ul class="text-zinc">
+                            <li>
+                                <i data-lucide="x" class="text-danger"></i> Months of
+                                confusing YouTube tutorials
+                            </li>
+                            <li>
+                                <i data-lucide="x" class="text-danger"></i> Broken GitHub code
+                                that never runs
+                            </li>
+                            <li>
+                                <i data-lucide="x" class="text-danger"></i> Formatting
+                                documentation for weeks
+                            </li>
+                            <li>
+                                <i data-lucide="x" class="text-danger"></i> Endless bugs and
+                                terminal errors
+                            </li>
+                            <li>
+                                <i data-lucide="x" class="text-danger"></i> Fear of failing
+                                final submission
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal delay-2">
+                    <div class="comp-card featured">
+                        <div class="recommended-badge text-uppercase">Recommended</div>
+                        <h5 class="mb-4 text-white">
+                            <i data-lucide="rocket" class="me-2 text-red"></i> Project Hub
+                            Way
+                        </h5>
+                        <ul>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i>
+                                Ready-to-run verified source code
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Complete
+                                professional documentation
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i>
+                                Step-by-step setup guides
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Lifetime
+                                access to project files
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i>
+                                Confidence during viva questions
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding how-it-works reveal">
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <small class="text-red fw-bold text-uppercase tracking-widest">
+                    How It Works
+                </small>
+                <h2 class="fw-bold mt-3">
+                    From Zero to Submission in
+                    <span class="text-red">4 Simple Steps</span>
+                </h2>
+            </div>
+
+            <!-- Steps -->
+            <div class="row g-4 align-items-stretch position-relative">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6 reveal delay-1">
+                    <div class="step-card-new">
+                        <div class="step-card-header">
+                            <span class="step-number">01</span>
+                            <span class="step-icon">
+                                <!-- your icon here -->
+                                <i data-lucide="check-circle"></i>
+                            </span>
+                        </div>
+                        <h6 class="fw-bold mt-4">Register</h6>
+                        <p class="text-zinc small">
+                            Create your free account in under 30 seconds.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6 reveal delay-2">
+                    <div class="step-card-new">
+                        <div class="step-card-header">
+                            <span class="step-number">02</span>
+                            <span class="step-icon">
+                                <!-- your icon here -->
+                                <i data-lucide="search"></i>
+                            </span>
+                        </div>
+                        <h6 class="fw-bold mt-4">Browse Projects</h6>
+                        <p class="text-zinc small">
+                            Choose from 5,000+ verified projects across domains.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6 reveal delay-3">
+                    <div class="step-card-new">
+                        <div class="step-card-header">
+                            <span class="step-number">03</span>
+                            <span class="step-icon">
+                                <!-- your icon here -->
+                                <i data-lucide="credit-card"></i>
+                            </span>
+                        </div>
+                        <h6 class="fw-bold mt-4">Pay Securely</h6>
+                        <p class="text-zinc small">
+                            UPI, Card, or NetBanking — 100% secure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6 reveal delay-4">
+                    <div class="step-card-new">
+                        <div class="step-card-header">
+                            <span class="step-number">04</span>
+                            <span class="step-icon">
+                                <!-- your icon here -->
+                                <i data-lucide="download"></i>
+                            </span>
+                        </div>
+                        <h6 class="fw-bold mt-4">Download Instantly</h6>
+                        <p class="text-zinc small">
+                            Get code, documents & PPT instantly in your email.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Note -->
+            <p class="text-center text-zinc small mt-5">
+                Most students complete this in
+                <strong class="text-white">less than 10 minutes</strong>.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-padding bg-zinc-950 reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <small class="text-red fw-bold text-uppercase tracking-widest">Pricing</small>
+                <h2 class="fw-bold mt-3">
+                    Simple pricing. <span class="text-red">No hidden charges.</span>
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal delay-1">
+                    <div class="price-card">
+                        <h6 class="fw-bold">Starter Plan</h6>
+                        <h2 class="fw-black my-4">₹1,500</h2>
+                        <ul class="text-zinc small mb-5">
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Full
+                                Source Code
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Basic
+                                Setup Video
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Lifetime
+                                Updates
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-zinc w-100 rounded-3">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal delay-2">
+                    <div class="price-card best-value">
+                        <h6 class="fw-bold">Professional</h6>
+                        <h2 class="fw-black my-4">₹2,500</h2>
+                        <ul class="text-white small mb-5">
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Full
+                                Source Code
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Full
+                                Documentation (SRS/DFD)
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i>
+                                Installation Support
+                            </li>
+                        </ul>
+                        <button class="btn btn-red w-100 rounded-3">Get Started</button>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal delay-3">
+                    <div class="price-card">
+                        <h6 class="fw-bold">Enterprise</h6>
+                        <h2 class="fw-black my-4">₹3,800</h2>
+                        <ul class="text-zinc small mb-5">
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i>
+                                Professional + Customization
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> 1-on-1
+                                Mentorship
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" class="text-red"></i> Viva
+                                Prep Guide
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-zinc w-100 rounded-3">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-extra-support reveal">
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <small class="text-red fw-bold text-uppercase tracking-widest">
+                    Extra Support
+                </small>
+                <h2 class="fw-bold mt-3">
+                    We Don't Just Sell Code.
+                    <span class="text-red">We Help You Succeed.</span>
+                </h2>
+            </div>
+
+            <!-- Cards -->
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 reveal delay-1">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <h6 class="fw-bold">Black Book Binding</h6>
+                        <p class="text-zinc small">
+                            Premium hard-bound project report, professionally printed and
+                            delivered for college submission.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 reveal delay-2">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h6 class="fw-bold">Documentation</h6>
+                        <p class="text-zinc small">
+                            Complete SRS, System Design, DFDs, UML diagrams, and
+                            ready-to-submit reports.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 reveal delay-3">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <h6 class="fw-bold">Project Explanation</h6>
+                        <p class="text-zinc small">
+                            1-on-1 explanation sessions so you understand your project
+                            confidently and crack the viva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding testimonials-section reveal">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <small class="text-red fw-bold text-uppercase tracking-widest">
+        Student Love
+      </small>
+      <h2 class="fw-bold mt-3">
+        Trusted by <span class="text-red">Thousands</span> of Students
+      </h2>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 reveal delay-1">
+        <div class="testimonial-card">
+          <div class="quote-icon">“</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "My guide approved it without any corrections. The explanation helped
+            me clear viva easily."
+          </p>
+          <div class="testimonial-user">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Anil R.</strong>
+              <small class="text-zinc d-block">MCA, JNTUH</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6 reveal delay-2">
+        <div class="testimonial-card">
+          <div class="quote-icon">“</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "Instant download, perfect documentation, and affordable price.
+            Totally worth it."
+          </p>
+          <div class="testimonial-user">
+            <div class="avatar">S</div>
+            <div>
+              <strong>Sneha K.</strong>
+              <small class="text-zinc d-block">CSE</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6 reveal delay-3">
+        <div class="testimonial-card">
+          <div class="quote-icon">“</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "Saved me weeks of stress. Support team actually responds."
+          </p>
+          <div class="testimonial-user">
+            <div class="avatar">R</div>
+            <div>
+              <strong>Rahul P.</strong>
+              <small class="text-zinc d-block">Final Year</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-padding faq-section reveal">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <small class="text-red fw-bold text-uppercase tracking-widest">
+        FAQ
+      </small>
+      <h2 class="fw-bold mt-3">
+        Frequently Asked <span class="text-red">Questions</span>
+      </h2>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="accordion faq-accordion mx-auto" id="faqAccordion">
+
+      <!-- Item 1 -->
+      <div class="accordion-item reveal>
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq1">
+            Will my guide accept this project?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes. All projects follow university-approved formats and are
+            successfully accepted by guides across JNTUH, OU, KU, and other universities.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item reveal">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq2">
+            Is it plagiarism-free?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Absolutely. Every project is original, plagiarism-free, and verified
+            before delivery.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item reveal">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq3">
+            Will you explain the project?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes. We provide 1-on-1 project explanation sessions to help you
+            confidently face viva and evaluations.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item reveal">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq4">
+            Is support available till submission?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes. Our support team is available until your final submission,
+            including revisions if required.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section-padding final-cta-section reveal">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-3">
+      Still Confused? Talk to a <span class="text-red">Project Expert.</span>
+    </h2>
+
+    <p class="text-zinc mb-4 mx-auto" style="max-width: 520px;">
+      Our team will help you choose the right project based on your syllabus
+      and deadline.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#" class="btn btn-red px-4 py-3 rounded-3">
+        Get Your Project Now
+      </a>
+      <a href="#" class="btn btn-outline-zinc px-4 py-3 rounded-3">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+    <footer class="pt-5 ">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand d-flex align-items-center text-white mb-3" href="#">
+                        <div class="logo-box">P</div>
+                        <span class="fw-bold fs-4">Project Hub</span>
+                    </a>
+                    <p class="text-zinc small pe-lg-5">
+                        Helping CS & IT students bridge the gap between learning and
+                        submission. High-quality, verified academic projects delivered
+                        instantly.
+                    </p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-zinc hover-red"><i data-lucide="instagram" class="size-5"></i></a>
+                        <a href="#" class="text-zinc hover-red"><i data-lucide="twitter" class="size-5"></i></a>
+                        <a href="#" class="text-zinc hover-red"><i data-lucide="github" class="size-5"></i></a>
+                        <a href="#" class="text-zinc hover-red"><i data-lucide="linkedin" class="size-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-4 text-white">Platform</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Projects</a></li>
+                        <li><a href="#">Pricing Plans</a></li>
+                        <li><a href="#">Custom Dev</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-4 text-white">Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Setup Guides</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-4 text-white">Stay Updated</h6>
+                    <p class="text-zinc small mb-3">
+                        Get notified when we release new projects.
+                    </p>
+                    <div class="input-group mb-3 newsletter-group">
+                        <input type="text" class="form-control bg-zinc-900 border-zinc-800 text-white"
+                            placeholder="Email address" />
+                        <button class="btn btn-red px-3" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="text-zinc small mb-0">
+                    © 2026 Project Hub. All rights reserved.
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="text-zinc small">Secure Payments via:</span>
+                    <span class="badge bg-zinc-900 border border-zinc-800 text-zinc fw-normal">UPI</span>
+                    <span class="badge bg-zinc-900 border border-zinc-800 text-zinc fw-normal">Stripe</span>
+                    <span class="badge bg-zinc-900 border border-zinc-800 text-zinc fw-normal">PayPal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
