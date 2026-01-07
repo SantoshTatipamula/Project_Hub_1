@@ -1,0 +1,738 @@
+/* 1. THEME VARIABLES */
+:root {
+  --bg-black: #000000;
+  --bg-zinc-950: #09090b;
+  --bg-zinc-900: #18181b;
+  --primary-red: #dc2626;
+  --text-zinc-400: #a1a1aa;
+  --border-zinc-800: #27272a;
+  --text-color: #ffffff;
+  --card-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+[data-theme="light"] {
+  --bg-black: #ffffff;
+  --bg-zinc-950: #ffffff;
+  --bg-zinc-900: #ffffff;
+  --text-zinc-400: #6b7280;
+  --border-zinc-800: #e5e7eb;
+  --text-color: #111827;
+  --card-gradient: #ffffff;
+}
+
+[data-theme="light"] .hero-section,
+[data-theme="light"] .bg-zinc-950,
+[data-theme="light"] .how-it-works,
+[data-theme="light"] .testimonials-section,
+[data-theme="light"] .faq-section,
+[data-theme="light"] .final-cta-section {
+  background: #fdfffc!important;
+}
+
+/* 2. BASE STYLES */
+body {
+  background-color: var(--bg-black);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.logo-color {
+  color: white;
+}
+.text-white {
+  color: var(--text-color) !important;
+}
+.text-red {
+  color: var(--primary-red) !important;
+}
+.text-zinc {
+  color: var(--text-zinc-400) !important;
+}
+.section-padding {
+  padding: 100px 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.brand-logo i {
+  font-size: 1.2rem;
+}
+
+
+/* 3. CARD UNIFICATION */
+.comp-card,
+.step-card,
+.step-card-new,
+.price-card,
+.support-card,
+.testimonial-card,
+.stat-card {
+  background: var(--bg-zinc-900);
+  border: 1px solid var(--border-zinc-800);
+  padding: 30px;
+  border-radius: 18px;
+  height: 100%;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  color: var(--text-color);
+}
+
+.stat-card,
+.step-card-new,
+.testimonial-card {
+  background: var(--card-gradient);
+}
+
+[data-theme="light"] .comp-card,
+[data-theme="light"] .step-card,
+[data-theme="light"] .step-card-new,
+[data-theme="light"] .price-card,
+[data-theme="light"] .support-card,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .stat-card {
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.comp-card:hover,
+.step-card:hover,
+.step-card-new:hover,
+.price-card:hover,
+.support-card:hover,
+.testimonial-card:hover,
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.12);
+}
+
+/* 4. NAVIGATION & BUTTONS (Logic Updated) */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-zinc-800);
+  transition: padding 0.3s ease;
+}
+[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.mobile-toggle {
+  display: none; /* Hidden on Desktop by default */
+  color: white;
+}
+
+.brand-logo {
+  background-color: var(--primary-red);
+  border-radius: 50% !important;
+}
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-red) !important;
+}
+.nav-link {
+  color: var(--text-zinc-400) !important;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.nav-link:hover,
+.hover-red:hover {
+  color: var(--primary-red) !important;
+}
+
+/* .logo-box {
+  background-color: var(--primary-red);
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+} */
+
+.btn-red,
+.btn-red-nav {
+  background-color: var(--primary-red);
+  color: white !important;
+  font-weight: 700;
+  border: 1px solid var(--primary-red);
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+.btn-red-nav {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+.btn-red:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+}
+
+.btn-login {
+  background: transparent;
+  color: var(--primary-red);
+  border: 1.5px solid var(--primary-red);
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 8px;
+  transition: all 0.25s;
+}
+.btn-login:hover {
+  background: var(--primary-red);
+  color: #fff;
+}
+
+.btn-outline-zinc {
+  border: 1px solid var(--primary-red);
+  color: var(--text-color);
+  font-weight: 700;
+  padding: 10px 20px;
+  background: transparent;
+}
+.btn-outline-zinc:hover {
+  background: var(--primary-red);
+  color: #fff !important;
+}
+
+/* 5. THEME TOGGLE */
+.btn-theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-zinc-800);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: var(--text-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-sun,
+[data-theme="light"] .icon-moon {
+  display: none;
+}
+[data-theme="light"] .icon-sun {
+  display: inline-block;
+}
+
+/* #theme-toggle svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile toggle */
+#theme-toggle-mobile svg {
+  width: 30px;
+  height: 30px;
+} */
+
+/* 6. HERO & SPECIFIC SECTIONS */
+.hero-section {
+  padding: 100px 0;
+  position: relative;
+}
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.15) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  filter: blur(60px);
+}
+[data-theme="light"] .hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.08) 0%,
+    transparent 70%
+  );
+}
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.comp-card.featured {
+  border: 1.5px solid rgba(220, 38, 38, 0.5);
+  position: relative;
+}
+.recommended-badge {
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  background: var(--primary-red);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: white;
+}
+
+/* 7. STEP & SUPPORT EXTRAS */
+.bg-extra-support,
+.how-it-works,
+.testimonials-section,
+.final-cta-section,
+.faq-section {
+  background-color: var(--bg-zinc-950);
+}
+[data-theme="dark"] .bg-extra-support,
+[data-theme="dark"] .how-it-works,
+[data-theme="dark"] .testimonials-section,
+[data-theme="dark"] .final-cta-section {
+  background-image: radial-gradient(
+    circle at top,
+    rgba(220, 38, 38, 0.08),
+    transparent 70%
+  );
+}
+
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.step-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgba(220, 38, 38, 0.25);
+}
+.support-icon,
+.step-icon,
+.avatar {
+  width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(220, 38, 38, 0.15);
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+/* QUOTE ICON */
+.quote-icon , [data-theme="light"] .quote-icon {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 5rem;
+  color: var(--primary-red);
+  opacity: 0.4;
+  margin-bottom: 12px;
+}
+
+/* STARS */
+.stars, [data-theme="light"] .stars { 
+  color: var(--primary-red);
+}
+
+/* 8. FAQ ACCORDION */
+.faq-accordion .accordion-item {
+  background: transparent;
+  color: var(--text-zinc-400);
+  border: 1px solid var(--border-zinc-800);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.faq-accordion .accordion-button {
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 18px 20px;
+  box-shadow: none;
+  transition: color 0.25s ease;
+}
+
+/* ✅ Active (opened) question turns red */
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--primary-red);
+}
+
+.faq-accordion .accordion-button::after {
+  filter: invert(1);
+}
+[data-theme="light"] .faq-accordion .accordion-button::after {
+  filter: none;
+}
+
+
+/* =========================================
+   INPUT BOX – UPDATED DESIGN (SAFE)
+   ========================================= */
+
+/* Newsletter input wrapper */
+/* =========================================
+   INPUT BOX – UPDATED (NO FOCUS BORDER)
+   ========================================= */
+
+.newsletter-group {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.newsletter-group .form-control {
+  background-color: var(--bg-zinc-900);
+  color: var(--text-color);
+  border: 1px solid var(--border-zinc-800);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-group .form-control::placeholder {
+  color: var(--text-zinc-400);
+}
+
+/* 🚫 Remove focus border & glow */
+.newsletter-group .form-control:focus,
+.newsletter-group .form-control:focus-visible {
+  background-color: var(--bg-zinc-900);
+  color: var(--text-color);
+  border-color: var(--border-zinc-800);
+  box-shadow: none;
+  outline: none;
+}
+
+/* Light theme */
+[data-theme="light"] .newsletter-group .form-control {
+  background-color: #f5f5f5;
+  color: #111827;
+}
+
+[data-theme="light"] .newsletter-group .form-control::placeholder {
+  color: #6b7280;
+}
+
+
+
+/* 9. SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   10. UPDATED RESPONSIVE BREAKPOINTS (Fixes Tablet/Laptop Issue)
+   ========================================================== */
+
+/* Laptop/Desktop (Large Screens) */
+@media (min-width: 992px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+  .navbar-collapse {
+    display: flex !important;
+  }
+  .navbar-actions {
+    display: flex !important;
+  }
+}
+
+/* Tablet & Smaller Laptops (Breakpoint where Navbar collapses) */
+@media (max-width: 991px) {
+  .mobile-toggle {
+    display: inline-flex !important;
+  } /* Shows hamburger ONLY here */
+  .navbar-actions {
+    display: none !important;
+  } /* Moves these to the sidebar */
+  .navbar-collapse {
+    display: none !important;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* Tablets & Large Phones */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .stat-card,
+  .support-card,
+  .testimonial-card {
+    padding: 22px 18px;
+  }
+}
+
+/* Small Phones (iPhone/Android Breakpoint) */
+@media (max-width: 425px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden !important;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .navbar .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Offcanvas Sidebar "Hard Fixes" */
+  .offcanvas.offcanvas-end {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    right: 0;
+    border-radius: 0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .offcanvas.offcanvas-end.show {
+    transform: translateX(0);
+  }
+
+   .offcanvas.offcanvas-end.hiding {
+    transform: translateX(100%);
+  }
+}
+
+/* 11. LIGHT THEME CLEANUP */
+
+
+
+/* =========================================
+   FOOTER – AUTHORITATIVE STYLES (REPLACEMENT)
+   ========================================= */
+
+footer {
+  background-color: #000000;
+  border-top: 1px solid var(--border-zinc-800);
+}
+
+
+/* Headings */
+footer h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Text */
+footer p,
+footer span,
+footer a {
+  color: var(--text-zinc-400);
+  font-size: 0.9rem;
+}
+
+.footer-brand {
+  margin-bottom: 20px;
+}
+/* Description */
+footer p.small {
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--text-zinc-400);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-red);
+}
+
+/* Social icons */
+footer .hover-red i {
+  transition: color 0.25s ease;
+}
+
+footer .hover-red:hover i {
+  color: var(--primary-red);
+}
+
+/* Newsletter input */
+footer .newsletter-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+footer .newsletter-group .form-control {
+  background-color: #1b1919;
+  color: #111827;
+  border: none;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+}
+
+footer .newsletter-group .form-control::placeholder {
+  color: #6b7280;
+}
+
+footer .newsletter-group .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Join button */
+footer .newsletter-group .btn-red {
+  border-radius: 0;
+  padding: 0 18px;
+  font-size: 0.9rem;
+}
+
+/* Bottom bar */
+footer > .py-4 {
+  border-top: 1px solid var(--border-zinc-800);
+}
+
+/* Payment badges */
+footer .badge {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  background-color: transparent;
+  color: var(--text-zinc-400);
+}
+
+/* =========================================
+   FOOTER – LIGHT THEME FIX (PROPER)
+   ========================================= */
+
+[data-theme="light"] footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-zinc-800);
+}
+
+[data-theme="light"] footer h6 {
+  color: #111827;
+}
+
+[data-theme="light"] footer p,
+[data-theme="light"] footer span,
+[data-theme="light"] footer a {
+  color: #6b7280;
+}
+
+[data-theme="light"] .footer-links a:hover {
+  color: var(--primary-red);
+}
+
+/* Newsletter input – light theme */
+[data-theme="light"] footer .newsletter-group .form-control {
+  background-color: #ffffff;
+  color: #111827;
+  /* border: 0.5px solid var(--primary-red); */
+  box-shadow: 1px 1px 1px rgb(220, 38, 38);
+}
+
+[data-theme="light"] footer .newsletter-group .form-control::placeholder {
+  color: #9ca3af;
+}
+
+/* Payment badges – light theme */
+[data-theme="light"] footer .badge {
+  color: #6b7280;
+  border-color: var(--border-zinc-800);
+}
+
+/* =========================================
+   OFFCANVAS SIDEBAR – LIGHT THEME (FINAL)
+   ========================================= */
+
+[data-theme="light"] .offcanvas-mobile {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-left: 1px solid var(--border-zinc-800);
+}
+
+/* Brand */
+[data-theme="light"] .offcanvas-mobile .navbar-brand,
+[data-theme="light"] .offcanvas-mobile .brand-name {
+  color: #111827 !important;
+}
+
+/* Nav links */
+[data-theme="light"] .offcanvas-mobile .nav-link {
+  color: #374151 !important;
+}
+
+[data-theme="light"] .offcanvas-mobile .nav-link:hover {
+  color: var(--primary-red) !important;
+}
+
+/* Close (X) */
+[data-theme="light"] .offcanvas-mobile .btn-close {
+  filter: invert(0);
+  opacity: 0.7;
+}
+
+[data-theme="light"] .offcanvas-mobile .btn-close:hover {
+  opacity: 1;
+}
+
+/* Login button */
+[data-theme="light"] .offcanvas-mobile .btn-login {
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+/* Toggle theme button */
+[data-theme="light"] #theme-toggle-mobile {
+  background-color: #ffffff;
+  color: #111827 !important;
+  border: 1px solid var(--border-zinc-800);
+}
+
+/* Toggle icon */
+[data-theme="light"] #theme-toggle-mobile i,
+[data-theme="light"] #theme-toggle-mobile svg {
+  color: #111827 !important;
+}
+
+
+[data-theme="light"] svg,
+[data-theme="light"] i[data-lucide] {
+  color: inherit;
+}
