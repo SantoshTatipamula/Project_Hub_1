@@ -46,4 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 4. ADD THIS: Simple check for login form
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            console.log("Login Form Submitted!");
+            // You can add validation here later
+        });
+    }
 });

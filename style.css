@@ -482,6 +482,116 @@ li {
   transform: translateY(0);
 }
 
+
+
+/* =========================================
+   11. REFINED LOGIN & REGISTER STYLES
+   ========================================= */
+.login-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 60px 0;
+}
+
+/* Reusing your card logic with high-end refinements */
+.login-card {
+    background: var(--bg-zinc-900);
+    border: 1px solid var(--border-zinc-800);
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Visibility Fix for Labels */
+.auth-label {
+    color: var(--text-color) !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Styling */
+.auth-input {
+    width: 100%;
+    background-color: var(--bg-black) !important;
+    border: 1px solid var(--border-zinc-800) !important;
+    color: var(--text-color) !important;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: var(--primary-red) !important;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1) !important;
+    outline: none;
+}
+
+/* "Or continue with" Separator Visibility */
+.auth-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--text-zinc-400);
+    font-size: 0.8rem;
+}
+
+.auth-separator::before, .auth-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-zinc-800);
+}
+
+.auth-separator:not(:empty)::before { margin-right: .75em; }
+.auth-separator:not(:empty)::after { margin-left: .75em; }
+
+/* Social Buttons Visibility */
+.btn-social-auth {
+    background: transparent;
+    border: 1px solid var(--border-zinc-800);
+    color: var(--text-color) !important;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-social-auth:hover {
+    border-color: var(--primary-red);
+    background: rgba(220, 38, 38, 0.05);
+}
+
+/* Light Theme Overrides (White & Red) */
+[data-theme="light"] .login-card {
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border-color: #f3f4f6;
+}
+
+[data-theme="light"] .auth-input {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+}
+
+[data-theme="light"] .auth-separator::before, 
+[data-theme="light"] .auth-separator::after {
+    border-color: #e5e7eb;
+}
+
+
+
 /* ==========================================================
    10. UPDATED RESPONSIVE BREAKPOINTS (Fixes Tablet/Laptop Issue)
    ========================================================== */
@@ -820,3 +930,4 @@ footer .upi-icon img,footer .social-media-icon {
 [data-theme="light"] i[data-lucide] {
   color: inherit;
 }
+
