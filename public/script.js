@@ -16,12 +16,12 @@ import {
 
 // 2. YOUR FIREBASE CONFIGURATION
 const firebaseConfig = {
-  apiKey: "AIzaSyC68gxGrr0osLThBGXurV0BmVpBImMbAJ4",
+  apiKey: "YOUR_API_KEY",
   authDomain: "project-hub-62a4b.firebaseapp.com",
   projectId: "project-hub-62a4b",
   storageBucket: "project-hub-62a4b.firebasestorage.app",
   messagingSenderId: "279993128950",
-  appId: "1:279993128950:web:ddec377a70c798073b59d7"
+  appId: "YOUR_APP_ID"
 };
 
 // 3. INITIALIZE FIREBASE
